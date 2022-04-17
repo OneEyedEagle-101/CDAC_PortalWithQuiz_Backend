@@ -54,7 +54,6 @@
     <artifactId>sonarlint-core</artifactId>
     <version>1.1</version>
 </dependency>
-
    <!-- https://mvnrepository.com/artifact/com.google.apis/google-api-services-drive -->
 
 <!-- https://mvnrepository.com/artifact/com.google.api-client/google-api-client-jackson2 -->
@@ -77,6 +76,14 @@
                 <version>3.4.0.905</version>
             </plugin>
 		</plugins>
+		
 	</build>
 
+<distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/OneEyedEagle-101/CDAC_PortalWithQuiz_Backend</url>
+        </repository>
+    </distributionManagement>
 </project>
