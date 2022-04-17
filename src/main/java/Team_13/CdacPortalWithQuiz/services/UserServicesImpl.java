@@ -70,6 +70,7 @@ public class UserServicesImpl {
 		byte[] psw = md.digest();
 		String hashpsw = DatatypeConverter.printHexBinary(psw).toUpperCase();
 		return userrepo.loginVerify(email,hashpsw);
+		
 	}
 	
 	public boolean passwordUpdateService(String email, String password)

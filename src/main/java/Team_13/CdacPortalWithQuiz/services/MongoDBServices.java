@@ -33,7 +33,7 @@ import Team_13.CdacPortalWithQuiz.repository.UserRepository;
 @Service
 public class MongoDBServices {
 	@Autowired
-	GridFsTemplate gridfs;
+	GridFsTemplate gridfstemplete;
 	@Autowired
 	GridFsOperations gridop;
 	@Autowired
@@ -46,7 +46,7 @@ public class MongoDBServices {
 		DBObject metadata = new BasicDBObject();
 		metadata.put("type","video");
 		metadata.put("title", moduleName+topicName);
-		ObjectId id = gridfs.store(videorec.getInputStream(),videorec.getName(),metadata);
+		ObjectId id = gridfstemplete.store(videorec.getInputStream(),videorec.getName(),metadata);
 		RecordingsManagement recMgmt = new RecordingsManagement();
 		recMgmt.setModuleName(moduleName);
 		recMgmt.setObjectId(id.toString());
@@ -63,7 +63,7 @@ public class MongoDBServices {
 		DBObject metadata = new BasicDBObject();
 		metadata.put("type","pdf");
 		metadata.put("title", moduleName+topicName);
-		ObjectId id = gridfs.store(file.getInputStream(),file.getName(),metadata);
+		ObjectId id = gridfstemplete.store(file.getInputStream(),file.getName(),metadata);
 		Notes note = new Notes();
 		note.setBaseId(id.toString());
 		note.setTopicName(topicName);

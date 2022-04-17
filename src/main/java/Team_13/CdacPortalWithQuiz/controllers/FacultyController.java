@@ -101,6 +101,7 @@ public class FacultyController {
 		}
 		return true;
 	}
+	
 	@GetMapping("/getStudyMaterial")
 	public List<Notes> getNotes()
 	{
@@ -119,7 +120,6 @@ public class FacultyController {
 		}
 		return true;
 	}
-	
 	@PostMapping ("/deleteMaterial")
 	public boolean deleteMaterial(@RequestParam String baseId)
 	{

@@ -7,6 +7,7 @@ import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import Team_13.CdacPortalWithQuiz.models.MongoDBRepo;
@@ -16,7 +17,7 @@ import Team_13.CdacPortalWithQuiz.models.Question;
 import Team_13.CdacPortalWithQuiz.models.RecordingsManagement;
 import Team_13.CdacPortalWithQuiz.models.Subject;
 
-@Repository
+@Component
 @Transactional
 public class FacultyRepository {
 @PersistenceContext
@@ -88,7 +89,6 @@ MongoDBRepo mongo;
 	@Transactional
 	public void deleteMaterial(String baseId) {
 		System.out.println(baseId);
-		
 		em.createQuery("delete from Notes n where n.baseId=:baseId").setParameter("baseId", baseId).executeUpdate();
 		mongo.deleteById(baseId);
 	
